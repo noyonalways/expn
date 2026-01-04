@@ -3,10 +3,11 @@ import { BcryptjsHashPassword, ConsoleLogger, JsonWebTokenImpl } from "@expn/sha
 import cors from 'cors'
 import { authRoutes } from "./routes/auth.routes";
 import { accountRoutes } from "./routes/account.routes";
+import { transactionRoutes } from "./routes/transaction.routes";
 
 const logger = new ConsoleLogger()
 const hashPassword = new BcryptjsHashPassword()
-const jsonWebToken = new JsonWebTokenImpl
+const jsonWebToken = new JsonWebTokenImpl()
 
 const app: Application = express();
 
@@ -20,19 +21,21 @@ authRoutes(app, {
   logger,
 })
 
-
 // account routes
 accountRoutes(app, {
   logger,
 })
 
+// transaction routes
+transactionRoutes(app, {
+  logger,
+})
 
 app.get("/health", (req, res) => {
   res.status(200).json({
     status: "ok",
   });
 });
-
 
 app.use((_req, _res, next) => {
 	next(new Error('Not Found'));

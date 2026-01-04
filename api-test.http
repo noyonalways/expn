@@ -27,7 +27,7 @@ POST http://localhost:5000/accounts
 Content-Type: application/json
 
 {
-  "userId": "ad2e8a7c-6786-4b26-8ddf-99ab266df142",
+  "userId": "6c01d75c-9988-4696-8fab-289ed9dbeb00",
   "currency": "BDT"
 }
 
@@ -39,7 +39,7 @@ POST http://localhost:5000/transactions/income
 Content-Type: application/json
 
 {
-  "accountId": "e57f0cc1-3c04-4fa7-98a3-8f03cc18d614",
+  "accountId": "9d3683c6-06c5-4627-96e6-2d61a9b0e6a4",
   "amount": 1000
 }
 
@@ -48,6 +48,6 @@ POST http://localhost:5000/transactions/expense
 Content-Type: application/json
 
 {
-  "accountId": "e57f0cc1-3c04-4fa7-98a3-8f03cc18d614",
+  "accountId": "9d3683c6-06c5-4627-96e6-2d61a9b0e6a4",
   "amount": 100
 }
