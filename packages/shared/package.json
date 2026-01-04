@@ -1,19 +1,9 @@
 {
-  "name": "@expn/database",
+  "name": "@expn/shared",
   "version": "1.0.0",
-  "description": "Database package for expn",
+  "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.js"
-    },
-    "./adapters/*": {
-      "types": "./dist/adapters/*.d.ts",
-      "require": "./dist/adapters/*.js"
-    }
-  },
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc",
@@ -31,5 +21,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/jsonwebtoken": "^9.0.9",
+    "bcryptjs": "^3.0.2",
+    "jsonwebtoken": "^9.0.2"
+  }
 }
