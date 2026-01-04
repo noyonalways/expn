@@ -27,12 +27,12 @@ POST http://localhost:5000/accounts
 Content-Type: application/json
 
 {
-  "userId": "6c01d75c-9988-4696-8fab-289ed9dbeb00",
-  "currency": "BDT"
+  "userId": "1bf869bf-5f53-4ceb-a25c-fd0bf2e50fd7",
+  "currency": "EUR"
 }
 
 ### View all accounts
-GET http://localhost:5000/accounts/ad2e8a7c-6786-4b26-8ddf-99ab266df142
+GET http://localhost:5000/accounts/1bf869bf-5f53-4ceb-a25c-fd0bf2e50fd7
 
 ### add income
 POST http://localhost:5000/transactions/income
