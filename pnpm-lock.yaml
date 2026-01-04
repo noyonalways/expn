@@ -20,6 +20,21 @@ importers:
 
   apps/restapi:
     dependencies:
+      '@expn/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@expn/database':
+        specifier: workspace:*
+        version: link:../../packages/database
+      '@expn/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
+      cors:
+        specifier: ^2.8.5
+        version: 2.8.5
+      express:
+        specifier: ^5.2.1
+        version: 5.2.1
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -48,15 +63,6 @@ importers:
       '@types/node':
         specifier: ^22.15.3
         version: 22.15.3
-      cors:
-        specifier: ^2.8.5
-        version: 2.8.5
-      express:
-        specifier: ^5.2.1
-        version: 5.2.1
-      jsonwebtoken:
-        specifier: ^9.0.3
-        version: 9.0.3
       rimraf:
         specifier: ^5.0.0
         version: 5.0.10

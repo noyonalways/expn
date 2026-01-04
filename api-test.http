@@ -1,0 +1,56 @@
+### Health
+GET http://localhost:5000/health
+
+
+### Register a new user
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john@example.com", 
+    "password": "password123"
+}
+
+### Login user
+POST http://localhost:5000/auth/login 
+Content-Type: application/json
+
+{
+    "email": "john@example.com",
+    "password": "password123"
+}
+
+### Health
+GET http://localhost:5000/health
+
+
+### Create an account
+POST http://localhost:5000/accounts
+Content-Type: application/json
+
+{
+  "userId": "342b8900-df87-4fa7-874f-8635b0f2d9f8",
+  "currency": "BDT"
+}
+
+### View all accounts
+GET http://localhost:5000/accounts/342b8900-df87-4fa7-874f-8635b0f2d9f8
+
+### add income
+POST http://localhost:5000/transactions/income
+Content-Type: application/json
+
+{
+  "accountId": "e57f0cc1-3c04-4fa7-98a3-8f03cc18d614",
+  "amount": 1000
+}
+
+### add expense
+POST http://localhost:5000/transactions/expense
+Content-Type: application/json
+
+{
+  "accountId": "e57f0cc1-3c04-4fa7-98a3-8f03cc18d614",
+  "amount": 100
+}
