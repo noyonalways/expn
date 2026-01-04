@@ -21,21 +21,18 @@ Content-Type: application/json
     "password": "password123"
 }
 
-### Health
-GET http://localhost:5000/health
-
 
 ### Create an account
 POST http://localhost:5000/accounts
 Content-Type: application/json
 
 {
-  "userId": "342b8900-df87-4fa7-874f-8635b0f2d9f8",
+  "userId": "ad2e8a7c-6786-4b26-8ddf-99ab266df142",
   "currency": "BDT"
 }
 
 ### View all accounts
-GET http://localhost:5000/accounts/342b8900-df87-4fa7-874f-8635b0f2d9f8
+GET http://localhost:5000/accounts/ad2e8a7c-6786-4b26-8ddf-99ab266df142
 
 ### add income
 POST http://localhost:5000/transactions/income

@@ -1,7 +1,8 @@
 import express, { Application, NextFunction, Request, Response } from "express";
 import { BcryptjsHashPassword, ConsoleLogger, JsonWebTokenImpl } from "@expn/shared";
 import cors from 'cors'
-import { authRoutes } from "./routes/auth.route";
+import { authRoutes } from "./routes/auth.routes";
+import { accountRoutes } from "./routes/account.routes";
 
 const logger = new ConsoleLogger()
 const hashPassword = new BcryptjsHashPassword()
@@ -18,6 +19,13 @@ authRoutes(app, {
   jsonWebToken,
   logger,
 })
+
+
+// account routes
+accountRoutes(app, {
+  logger,
+})
+
 
 app.get("/health", (req, res) => {
   res.status(200).json({
