@@ -94,6 +94,27 @@ importers:
         specifier: ^5.0.0
         version: 5.9.3
 
+  packages/database:
+    devDependencies:
+      '@expn/core':
+        specifier: workspace:*
+        version: link:../core
+      '@expn/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@expn/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/node':
+        specifier: ^20.0.0
+        version: 20.19.27
+      rimraf:
+        specifier: ^5.0.0
+        version: 5.0.10
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.3
+
   packages/eslint-config:
     devDependencies:
       '@eslint/js':

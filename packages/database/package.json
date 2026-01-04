@@ -1,0 +1,25 @@
+{
+  "name": "@expn/database",
+  "version": "1.0.0",
+  "description": "Database package for expn",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "test": "jest",
+    "clean": "rimraf dist",
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@expn/core": "workspace:*",
+    "@expn/eslint-config": "workspace:*",
+    "@expn/typescript-config": "workspace:*",
+    "@types/node": "^20.0.0",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -4,6 +4,28 @@
   "description": "Core package for expn",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js"
+    },
+    "./use_cases/*": {
+      "types": "./dist/use_cases/*.d.ts",
+      "require": "./dist/use_cases/*.js"
+    },
+    "./repositories/*": {
+      "types": "./dist/repositories/*.d.ts",
+      "require": "./dist/repositories/*.js"
+    },
+    "./interfaces/*": {
+      "types": "./dist/interfaces/*.d.ts",
+      "require": "./dist/interfaces/*.js"
+    },
+    "./entities/*": {
+      "types": "./dist/entities/*.d.ts",
+      "require": "./dist/entities/*.js"
+    }
+  },
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc",
