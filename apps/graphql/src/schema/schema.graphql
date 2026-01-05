@@ -1,0 +1,47 @@
+type User {
+	id: ID!
+	name: String!
+	email: String!
+}
+
+type Account {
+	id: ID!
+	userId: ID!
+	currency: String!
+	balance: Float!
+	lastUpdatedAt: String!
+	transactions: [Transaction!]!
+}
+
+type Transaction {
+	id: ID!
+	accountId: ID!
+	type: String!
+	amount: Float!
+	lastBalance: Float!
+	createdAt: String!
+}
+
+input TransactionFilter {
+	startDate: String
+	endDate: String
+	type: String
+}
+
+type Query {
+	accounts(userId: ID!): [Account!]!
+	account(id: ID!): Account
+	transactions(accountId: ID!, filter: TransactionFilter): [Transaction!]!
+}
+
+type LoginResponse {
+	token: String!
+}
+
+type Mutation {
+	register(name: String!, email: String!, password: String!): User!
+	login(email: String!, password: String!): LoginResponse!
+	createAccount(accountId: ID!, currency: String!): Account!
+	addIncome(accountId: ID!, amount: Float!): Transaction!
+	addExpense(accountId: ID!, amount: Float!): Transaction!
+}
