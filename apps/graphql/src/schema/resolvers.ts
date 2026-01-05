@@ -12,16 +12,9 @@ export const resolvers: Resolvers<Context> = {
 			return account;
 		},
 		transactions: async (_, { accountId, filter }, { useCases }) => {
-			return [
-				{
-					id: '1',
-					accountId: accountId,
-					amount: 100,
-					type: 'income',
-					createdAt: new Date().toISOString(),
-					lastBalance: 100,
-				},
-			];
+			return await useCases.viewAllTransactionsByAccountId.execute(accountId, {
+				filter,
+			});
 		},
 	},
 

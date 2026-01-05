@@ -20,10 +20,11 @@ import {
 } from "@expn/shared";
 import { AddIncomeUseCase } from "@expn/core/use_cases/add-income";
 import { AddExpenseUseCase } from "@expn/core/use_cases/add-expense";
+import { ViewAllTransactionsByAccountIdUseCase } from "@expn/core/use_cases/view-all-transactions";
 
 const userRepository = getUserRepository("prisma");
 const accountRepository = getAccountRepository("prisma");
-const transactionRepository = getTransactionRepository("in-memory");
+const transactionRepository = getTransactionRepository("prisma");
 
 const hashPassword = new BcryptjsHashPassword();
 const jwt = new JsonWebTokenImpl();
@@ -56,6 +57,10 @@ export const startServer = async (
           login: new UserLoginUseCase(userRepository, hashPassword, jwt),
           createAccount: new CreateNewAccountUseCase(accountRepository, logger),
           viewAccounts: new ViewAllAccountsUseCase(accountRepository, logger),
+          viewAllTransactionsByAccountId: new ViewAllTransactionsByAccountIdUseCase(
+            transactionRepository,
+            logger
+          ),
           addIncome: new AddIncomeUseCase(
             accountRepository,
             transactionRepository,

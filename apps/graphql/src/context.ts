@@ -4,6 +4,7 @@ import { CreateNewAccountUseCase } from '@expn/core/use_cases/create-new-account
 import { CreateNewUserUseCase } from '@expn/core/use_cases/create-new-user';
 import { UserLoginUseCase } from '@expn/core/use_cases/user-login';
 import { ViewAllAccountsUseCase } from '@expn/core/use_cases/view-all-accounts';
+import { ViewAllTransactionsByAccountIdUseCase } from '@expn/core/use_cases/view-all-transactions';
 
 export interface Context {
 	useCases: {
@@ -13,5 +14,6 @@ export interface Context {
 		viewAccounts: ViewAllAccountsUseCase;
 		addIncome: AddIncomeUseCase;
 		addExpense: AddExpenseUseCase;
+		viewAllTransactionsByAccountId: ViewAllTransactionsByAccountIdUseCase;
 	};
 }
