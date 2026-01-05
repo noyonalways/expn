@@ -1,12 +1,14 @@
 import { Logger } from '@expn/core/interfaces/Logger';
+import { AccountRepository } from '@expn/core/repositories/account.repository';
+import { TransactionRepository } from '@expn/core/repositories/transaction.repository';
 import { AddExpenseUseCase } from '@expn/core/use_cases/add-expense';
 import { AddIncomeUseCase } from '@expn/core/use_cases/add-income';
-import { InMemoryAccountRepository } from '@expn/database/adapters/in_memory/impl_account.repository';
-import { InMemoryTransactionRepository } from '@expn/database/adapters/in_memory/impl_transaction.reposity';
 import { Application, Router, Request, Response } from 'express';
 
 type Dependencies = {
 	logger: Logger;
+	accountRepository: AccountRepository;
+	transactionRepository: TransactionRepository;
 };
 
 export const transactionRoutes = (app: Application, deps: Dependencies) => {
@@ -14,8 +16,8 @@ export const transactionRoutes = (app: Application, deps: Dependencies) => {
 
 	router.post('/expense', async (req: Request, res: Response) => {
 		const addExpense = new AddExpenseUseCase(
-      new InMemoryAccountRepository(),
-			new InMemoryTransactionRepository(),
+      deps.accountRepository,
+			deps.transactionRepository,
 			deps.logger
 		);
 
@@ -32,8 +34,8 @@ export const transactionRoutes = (app: Application, deps: Dependencies) => {
 
 	router.post('/income', async (req: Request, res: Response) => {
 		const addIncome = new AddIncomeUseCase( 
-			new InMemoryAccountRepository(),
-			new InMemoryTransactionRepository(),
+			deps.accountRepository,
+			deps.transactionRepository,
 			deps.logger
 		);
 

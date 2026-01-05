@@ -7,7 +7,8 @@
   ],
   "cSpell.words": [
     "expn",
-    "restapi"
+    "restapi",
+    "typeslowdb"
   ],
   "prisma.pinToPrisma6": true
 }

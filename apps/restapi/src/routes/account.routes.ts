@@ -1,11 +1,12 @@
 import { Logger } from '@expn/core/interfaces/Logger';
+import { AccountRepository } from '@expn/core/repositories/account.repository';
 import { CreateNewAccountUseCase } from '@expn/core/use_cases/create-new-account';
 import { ViewAllAccountsUseCase } from '@expn/core/use_cases/view-all-accounts';
-import { InMemoryAccountRepository } from '@expn/database/adapters/in_memory/impl_account.repository';
 import { Application, Router, Request, Response } from 'express';
 
 type Dependencies = {
 	logger: Logger;
+	accountRepository: AccountRepository;
 };
 
 export const accountRoutes = (app: Application, deps: Dependencies) => {
@@ -13,7 +14,7 @@ export const accountRoutes = (app: Application, deps: Dependencies) => {
 
 	router.post('/', async (req: Request, res: Response) => {
 		const createAccount = new CreateNewAccountUseCase(
-      new InMemoryAccountRepository(),
+      deps.accountRepository,
       deps.logger
     );
 
@@ -30,7 +31,7 @@ export const accountRoutes = (app: Application, deps: Dependencies) => {
 
 	router.get('/:userId', async (req: Request, res: Response) => {
 		const viewAccounts = new ViewAllAccountsUseCase(
-      new InMemoryAccountRepository(),
+      deps.accountRepository,
       deps.logger
     );
 

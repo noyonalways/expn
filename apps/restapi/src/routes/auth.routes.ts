@@ -4,12 +4,13 @@ import { JsonWebToken } from "@expn/core/interfaces/JsonWebToken";
 import { Logger } from "@expn/core/interfaces/Logger";
 import { Application, Request, Response, Router } from "express";
 import { UserLoginUseCase } from "@expn/core/use_cases/user-login";
-import { InMemoryUserRepository } from "@expn/database/adapters/in_memory/impl_user.repository";
+import { UserRepository } from "@expn/core/repositories/user.repository";
 
 type Dependencies<T> = {
   hashPassword: HashPassword;
   jsonWebToken: JsonWebToken<T>;
   logger: Logger;
+  userRepository: UserRepository;
 };
 
 export const authRoutes = <T>(app: Application, deps: Dependencies<T>) => {
@@ -20,7 +21,7 @@ export const authRoutes = <T>(app: Application, deps: Dependencies<T>) => {
 
     // Resolved the dependencies
     const createUser = new CreateNewUserUseCase(
-      new InMemoryUserRepository(),
+      deps.userRepository,
       deps.hashPassword,
       deps.logger
     );
@@ -44,7 +45,7 @@ export const authRoutes = <T>(app: Application, deps: Dependencies<T>) => {
 
     // Resolved the dependencies
     const loginUser = new UserLoginUseCase(
-      new InMemoryUserRepository(),
+      deps.userRepository,
       deps.hashPassword,
       deps.jsonWebToken
     );

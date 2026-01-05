@@ -27,20 +27,20 @@ POST http://localhost:5000/accounts
 Content-Type: application/json
 
 {
-  "userId": "1bf869bf-5f53-4ceb-a25c-fd0bf2e50fd7",
-  "currency": "EUR"
+  "userId": "15ab9391-78d1-4cb3-b262-d8f0919b16f7",
+  "currency": "USD"
 }
 
 ### View all accounts
-GET http://localhost:5000/accounts/1bf869bf-5f53-4ceb-a25c-fd0bf2e50fd7
+GET http://localhost:5000/accounts/15ab9391-78d1-4cb3-b262-d8f0919b16f7
 
 ### add income
 POST http://localhost:5000/transactions/income
 Content-Type: application/json
 
 {
-  "accountId": "9d3683c6-06c5-4627-96e6-2d61a9b0e6a4",
-  "amount": 1000
+  "accountId": "ea15c393-4e95-428f-9c5b-2e0380bfa7dd",
+  "amount": 5000
 }
 
 ### add expense
@@ -48,6 +48,6 @@ POST http://localhost:5000/transactions/expense
 Content-Type: application/json
 
 {
-  "accountId": "9d3683c6-06c5-4627-96e6-2d61a9b0e6a4",
-  "amount": 100
+  "accountId": "ea15c393-4e95-428f-9c5b-2e0380bfa7dd",
+  "amount": 300
 }
