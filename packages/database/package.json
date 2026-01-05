@@ -25,16 +25,34 @@
     "prisma:studio": "prisma studio",
     "prisma:push": "prisma db push",
     "prisma:deploy": "prisma migrate deploy",
-    "prisma:clean": "prisma migrate reset"
+    "prisma:clean": "prisma migrate reset",
+    "drizzle:generate": "drizzle-kit generate",
+    "drizzle:migrate": "drizzle-kit migrate",
+    "drizzle:studio": "drizzle-kit studio",
+    "drizzle:push": "drizzle-kit push",
+    "drizzle:pull": "drizzle-kit pull"
   },
   "devDependencies": {
     "@expn/core": "workspace:*",
     "@expn/eslint-config": "workspace:*",
     "@expn/typescript-config": "workspace:*",
+    "@types/lodash": "^4.17.16",
     "@types/node": "^20.0.0",
+    "@types/pg": "^8.15.2",
+    "drizzle-kit": "^0.31.1",
+    "prisma": "^6.8.2",
     "rimraf": "^5.0.0",
+    "tsx": "^4.19.4",
     "typescript": "^5.0.0",
-    "prisma": "^6.8.2"
+    "typeslowdb": "link:@/typeslowdb"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.8.2",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.43.1",
+    "lodash": "^4.17.21",
+    "lowdb": "^7.0.1",
+    "pg": "^8.16.0"
   },
   "keywords": [],
   "author": "",

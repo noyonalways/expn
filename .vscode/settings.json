@@ -5,5 +5,9 @@
       "mode": "auto"
     }
   ],
-  "cSpell.words": ["expn", "restapi"]
+  "cSpell.words": [
+    "expn",
+    "restapi"
+  ],
+  "prisma.pinToPrisma6": true
 }
