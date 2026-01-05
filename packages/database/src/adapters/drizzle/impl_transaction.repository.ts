@@ -104,6 +104,14 @@ export class DrizzleTransactionRepository implements TransactionRepository {
     );
   }
 
+  async findAllByAccountId(
+    accountId: string,
+    filter?: TransactionFilter,
+    pagination?: TransactionPagination
+  ): Promise<Transaction[]> {
+    return await this.findByAccountId(accountId, filter);
+  }
+
   private toTransaction(
     transaction: typeof transactionsTable.$inferSelect
   ): Transaction {

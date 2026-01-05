@@ -2,6 +2,7 @@ import { Command } from 'commander';
 import { testCommand } from './commands/test-command';
 import { loginCommand } from './commands/login-command';
 import { viewAccountsCommand } from './commands/view-accounts-command';
+import { viewTransactionsCommand } from './commands/view-transactions-command';
 import { addTransactionCommand } from './commands/transaction-command';
 import { logoutCommand } from './commands/logout-command';
 
@@ -22,6 +23,7 @@ program
 program.addCommand(testCommand);
 program.addCommand(loginCommand);
 program.addCommand(viewAccountsCommand);
+program.addCommand(viewTransactionsCommand);
 program.addCommand(addTransactionCommand);
 program.addCommand(logoutCommand);
 

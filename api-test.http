@@ -51,3 +51,6 @@ Content-Type: application/json
   "accountId": "ea15c393-4e95-428f-9c5b-2e0380bfa7dd",
   "amount": 300
 }
+
+### View all transactions by account id with type filter
+GET http://localhost:5000/transactions/accounts/ea15c393-4e95-428f-9c5b-2e0380bfa7dd?type=all

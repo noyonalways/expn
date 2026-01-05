@@ -81,4 +81,13 @@ export class InMemoryTransactionRepository implements TransactionRepository {
 
 		return Promise.resolve(filtered);
 	}
+
+	async findAllByAccountId(
+		accountId: string,
+		filter?: TransactionFilter,
+		pagination?: TransactionPagination
+	): Promise<Transaction[]> {
+
+		return await this.findByAccountId(accountId, filter);
+	}
 }
